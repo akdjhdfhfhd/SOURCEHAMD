@@ -9,17 +9,17 @@ def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
+                text="أضـف البوت لمجموعتكـ ✅",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
         [
             InlineKeyboardButton(
-                text="ʜᴇʟᴩ",
+                text="اوامر البوت 🌐",
                 callback_data="settings_back_helper",
             ),
             InlineKeyboardButton(
-                text="sᴇᴛᴛɪɴɢs", callback_data="settings_helper"
+                text="الاعدادات ⚙️", callback_data="settings_helper"
             ),
         ],
      ]
@@ -30,24 +30,26 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text="•ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ•",
+                text="•أضـف البوت لمجموعتكـ ✅",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
         [
             InlineKeyboardButton(
-                text="🍂ᴄᴏᴍᴍᴀɴᴅs🍂", callback_data="settings_back_helper"
-            ),
+                text="اوامر البوت 🌐", callback_data="settings_back_helper"
+                 )
+        ],
+        [
             InlineKeyboardButton(
-                text="🥀 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🥀", user_id=OWNER
+                text="مطور البوت 👨‍💻", user_id=OWNER
             )
         ],
         [
             InlineKeyboardButton(
-                text="💔sᴜᴩᴩᴏʀᴛ💔", url=config.SUPPORT_GROUP
+                text="قناة البوت ⚙️", url=f"https://t.me/ah07v"
             ),
             InlineKeyboardButton(
-                text="✨ sᴏᴜʀᴄᴇ ✨", url=f"https://github.com/itsneerja/NidhiMusic"
+                text="لتنصيب البوت 🎸", url=f"https://t.me/ah05v"
             )
         ],
      ]
