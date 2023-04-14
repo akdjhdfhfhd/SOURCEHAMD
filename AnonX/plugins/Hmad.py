@@ -1,21 +1,33 @@
 from pyromod import listen
-from random import choice, randint 
-from pyrogram import Client, filters 
-from pyrogram.types import (
-  InlineKeyboardMarkup,
-  InlineKeyboardButton,
-  CallbackQuery
-)
+from import asyncio
+import time
 
-api_id = "21468057" 
-api_hash = "f4a868976632fec2260eb7a7f9d88720"
-token = "5844861055:AAH3E3zKmSn44T_eYx5EL_utA5ogZDaPJQ8"
-app = Client(
-   "@ah07v - Games",
-    api_id=api_id,
-  api_hash=api_hash,
-  bot_token=token
-)
+from pyrogram import filters
+from pyrogram.types import (InlineKeyboardButton,
+                            InlineKeyboardMarkup, Message)
+from youtubesearchpython.__future__ import VideosSearch
+
+import config
+from config import BANNED_USERS
+from config import OWNER_ID
+from strings import get_command, get_string
+from AnonX import Telegram, YouTube, app
+from AnonX.misc import SUDOERS, _boot_
+from AnonX.plugins.playlist import del_plist_msg
+from AnonX.plugins.sudoers import sudoers_list
+from AnonX.utils.database import (add_served_chat,
+                                       add_served_user,
+                                       get_served_chats,
+                                       get_served_users,
+                                       blacklisted_chats,
+                                       get_assistant, get_lang,
+                                       get_userss, is_on_off,
+                                       is_served_private_chat)
+from AnonX.utils.decorators.language import LanguageStart
+from AnonX.utils.formatters import get_readable_time
+from AnonX.utils.inline import (help_pannel, private_panel,
+                                     start_pannel)
+
 
 EMOJIS = list("😭🤣😂😅😆😁😄😃😀🥳🤩🤩😍🥰😘😚😙😗😉🤪😜😝😛😋🥲🙂🙃😶😐😑🫣🤭")
 @app.on_message(filters.regex("^الاسرع$") & filters.group)
